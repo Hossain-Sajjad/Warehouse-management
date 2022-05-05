@@ -12,7 +12,7 @@ const Header = () => {
                         <Nav.Link href="#features">Manage Items</Nav.Link>
                         <Nav.Link href="#features">Add Items</Nav.Link>
                         <Nav.Link href="#features">My Items</Nav.Link>
-                        <Nav.Link href="#features">Log In</Nav.Link>
+                        <Nav.Link href="/login">Log In</Nav.Link>
                         <Nav.Link href="#pricing">Register</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
