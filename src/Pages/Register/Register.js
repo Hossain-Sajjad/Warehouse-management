@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import "./Register.css";
 
 const Register = () => {
-    const { register, handleSubmit } = useForm();
+    const { register, formState: { errors }, handleSubmit } = useForm();
     const onSubmit = (data) => {
         console.log(data);
     };
@@ -11,15 +11,24 @@ const Register = () => {
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
             <label htmlFor="name">Name</label>
-            <input placeholder="name" {...register("name", { required: true })} />
+            <input placeholder="name" {...register("name", { required: "Please enter your name" })} />
+            {errors.name && <p className='text-danger'>{errors.name.message}</p>}
 
             <label htmlFor="email">Email</label>
-            <input placeholder="email" {...register("email", { required: true })} />
+            <input placeholder="email" {...register("email", {
+                required: "Please enter your mail before submit",
+                pattern: {
+                    value: /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
+                    message: "Invalid email address"
+                }
+            })} />
+            {errors.email && <p className='text-danger'>{errors.email.message}</p>}
 
             <label htmlFor="password">Password</label>
-            <input placeholder="password" type="password" {...register("password", { required: true })} />
+            <input placeholder="password" type="password" {...register("password", { required: "enter a strong password" })} />
+            {errors.password && <p className='text-danger'>{errors.password.message}</p>}
 
-            <input className='register-btn' type="Submit" value="Register" />
+            <input className='register-btn' type="Submit" defaultValue="Register" />
         </form>
     );
 };
