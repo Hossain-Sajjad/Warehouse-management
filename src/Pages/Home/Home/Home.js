@@ -1,8 +1,14 @@
 import React from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import TopSection from '../TopSection/TopSection';
 import './Home.css'
 
 const Home = () => {
+    const id = 'hello';
+    const navigate = useNavigate()
+    const navigateToItemUpdate = id => {
+        navigate(`/home/${id}`);
+    }
     return (
         <div>
             <TopSection></TopSection>
@@ -19,7 +25,7 @@ const Home = () => {
                             <p>Quantity: 50</p>
                         </div>
                         <div className='my-auto'>
-                            <div className="btn btn-primary">Update</div>
+                            <div className="btn btn-primary" onClick={() => navigateToItemUpdate(id)}>Update</div>
                         </div>
                     </div>
                 </div>
