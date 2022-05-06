@@ -1,4 +1,5 @@
 form {
+    background: #0e101c;
     max-width: 500px;
     margin: 0 auto;
 }
@@ -9,12 +10,6 @@ h1 {
     text-align: center;
     padding-bottom: 10px;
     border-bottom: 1px solid rgb(79, 98, 148);
-}
-
-.form {
-    background: #0e101c;
-    max-width: 400px;
-    margin: 0 auto;
 }
 
 input {
@@ -39,7 +34,7 @@ label {
     font-weight: 200;
 }
 
-.login-btn {
+.register-btn {
     background: #ec5990;
     color: white;
     text-transform: uppercase;
@@ -51,7 +46,7 @@ label {
     letter-spacing: 10px;
 }
 
-.login-btn:hover {
+.register-btn:hover {
     background: #bf1650;
     transition: 0.3s all;
 }
