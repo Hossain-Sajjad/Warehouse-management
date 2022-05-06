@@ -20,7 +20,7 @@ const Register = () => {
             {errors.password && <p className='text-danger'>{errors.password.message}</p>}
 
 
-            <input className='login-btn' type="Submit" defaultValue="Log In" />
+            <input className='login-btn' type="Submit" defaultValue="Login" />
         </form>
     );
 };

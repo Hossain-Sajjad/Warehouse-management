@@ -1,0 +1,16 @@
+.header-tittle {
+    color: #C6081B;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 3px;
+}
+
+.header-tittle:hover {
+    background-color: #C6081B;
+    color: white;
+    border-radius: 5px;
+    transition: 0.3s all;
+}

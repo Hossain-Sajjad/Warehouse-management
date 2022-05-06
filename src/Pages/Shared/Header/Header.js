@@ -1,11 +1,13 @@
 import React from 'react';
+import './Header.css';
 import { Container, Nav, Navbar } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
         <Navbar collapseOnSelect expand="lg" variant="dark">
             <Container>
-                <Navbar.Brand href="/">Hossain Electronics</Navbar.Brand>
+                <Link className='header-tittle' to="/">Hossain Electronics</Link>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="ms-auto">

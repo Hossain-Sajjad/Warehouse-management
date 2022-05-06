@@ -1,4 +1,5 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
+import './AddItems.css'
 
 const AddItems = () => {
     const handleSubmitItem = event => {
@@ -11,7 +12,7 @@ const AddItems = () => {
         const img = event.target.img.value;
         const item = { name, description, price, quantity, supplier, img };
         console.log(item);
-        fetch("http://localhost:5000/item", {
+        fetch("https://damp-brushlands-34790.herokuapp.com/item", {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -25,7 +26,7 @@ const AddItems = () => {
         event.target.reset();
     }
     return (
-        <div>
+        <div className='container mt-5'>
             <form onSubmit={handleSubmitItem}>
                 <input name='name' type="text" placeholder='name' required />
                 <input name='description' type="text" placeholder='description' required />
@@ -33,7 +34,7 @@ const AddItems = () => {
                 <input name='supplier' type="text" placeholder='supplier' required />
                 <input name='quantity' type="text" placeholder='quantity' required />
                 <input name='img' type="text" placeholder='image url' required />
-                <input type="submit" value="Add Item" />
+                <input className='addBtn' type="submit" value="Add Item" />
             </form>
         </div>
     );

@@ -1,0 +1,16 @@
+.addBtn {
+    background: #C6081B;
+    color: white;
+    text-transform: uppercase;
+    border: none;
+    margin-top: 40px;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 10px;
+}
+
+.addBtn:hover {
+    background: #bf1650;
+    transition: 0.3s all;
+}

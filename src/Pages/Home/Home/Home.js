@@ -1,35 +1,12 @@
-import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import Items from '../Items/Items';
 import TopSection from '../TopSection/TopSection';
 import './Home.css'
 
 const Home = () => {
-    const id = 'hello';
-    const navigate = useNavigate()
-    const navigateToItemUpdate = id => {
-        navigate(`/home/${id}`);
-    }
     return (
         <div>
             <TopSection></TopSection>
-            <div className='container mt-5'>
-                <div className='product'>
-                    <div>
-                        <img className='img-fluid' src="https://i.ibb.co/kKLJrcv/istockphoto-1323983873-170667a.webp" alt="" />
-                    </div>
-                    <div className='product-info'>
-                        <div className='my-auto'>
-                            <h3>IPhone 13 Series</h3>
-                            <p>Supplier: HS traders</p>
-                            <p>A latest stoke from Taiwan</p>
-                            <p>Quantity: 50</p>
-                        </div>
-                        <div className='my-auto'>
-                            <div className="btn btn-primary" onClick={() => navigateToItemUpdate(id)}>Update</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <Items></Items>
         </div>
     );
 };
