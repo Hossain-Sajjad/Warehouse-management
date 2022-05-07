@@ -3,6 +3,7 @@ import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
+import Social from '../Shared/Social/Social';
 import "./LogIn.css";
 
 const Register = () => {
@@ -45,6 +46,7 @@ const Register = () => {
             <div className='mt-4'>
                 <p className='w-50 mx-auto text-white'>Don't have a account? <Link to='/register' className='text-decoration-none text-danger ms-2'>Register</Link></p>
             </div>
+            <Social></Social>
         </div>
     );
 };

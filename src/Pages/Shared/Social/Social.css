@@ -1,0 +1,18 @@
+.google-btn {
+    background: #C6081B;
+    color: white;
+    text-transform: uppercase;
+    border: none;
+    margin-top: 10px;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    margin-bottom: 25px;
+    border-radius: 5px;
+}
+
+.google-btn:hover {
+    background: #bf1650;
+    transition: 0.3s all;
+}
