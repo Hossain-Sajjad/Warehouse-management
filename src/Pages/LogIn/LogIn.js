@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useForm } from "react-hook-form";
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import "./LogIn.css";
 
@@ -28,19 +28,24 @@ const Register = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)}>
-            <label htmlFor="email">Email</label>
-            <input placeholder="email" {...register("email", { required: "Please enter your mail before submit" })} />
-            {errors.email && <p className='text-danger'>{errors.email.message}</p>}
+        <div>
+            <form onSubmit={handleSubmit(onSubmit)}>
+                <label htmlFor="email">Email</label>
+                <input placeholder="email" {...register("email", { required: "Please enter your mail before submit" })} />
+                {errors.email && <p className='text-danger'>{errors.email.message}</p>}
 
 
-            <label htmlFor="password">Password</label>
-            <input placeholder="password" type="password" {...register("password", { required: "enter your password" })} />
-            {errors.password && <p className='text-danger'>{errors.password.message}</p>}
+                <label htmlFor="password">Password</label>
+                <input placeholder="password" type="password" {...register("password", { required: "enter your password" })} />
+                {errors.password && <p className='text-danger'>{errors.password.message}</p>}
 
 
-            <input className='login-btn' type="Submit" defaultValue="Login" />
-        </form>
+                <input className='login-btn' type="Submit" defaultValue="Login" />
+            </form>
+            <div className='mt-4'>
+                <p className='w-50 mx-auto text-white'>Don't have a account? <Link to='/register' className='text-decoration-none text-danger ms-2'>Register</Link></p>
+            </div>
+        </div>
     );
 };
 
