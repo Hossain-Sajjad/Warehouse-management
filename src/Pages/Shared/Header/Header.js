@@ -22,7 +22,7 @@ const Header = () => {
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="ms-auto">
                         <Nav.Link href="/manageitems">Manage Items</Nav.Link>
-                        <Nav.Link href="aditems">Add Items</Nav.Link>
+                        <Nav.Link href="/additem">Add Items</Nav.Link>
                         <Nav.Link href="/myitems">My Items</Nav.Link>
                         {
                             user ?
@@ -31,7 +31,6 @@ const Header = () => {
                                 <Nav.Link href="/login">Login</Nav.Link>
 
                         }
-                        {/* <Nav.Link href="/login">Log In</Nav.Link> */}
                         <Nav.Link href="/register">Register</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>

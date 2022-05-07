@@ -3,6 +3,7 @@ import './App.css';
 import AddItems from './Pages/AddItems/AddItems';
 import Home from './Pages/Home/Home/Home';
 import LogIn from './Pages/LogIn/LogIn';
+import ManageItems from './Pages/ManageItems/ManageItems';
 import Register from './Pages/Register/Register';
 import RequireAuth from './Pages/RequireAuth/RequireAuth';
 import Header from './Pages/Shared/Header/Header';
@@ -15,12 +16,13 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
+        <Route path="/manageitems" element={<ManageItems />} />
         <Route path="/home/:id" element={
           <RequireAuth>
             <UpdateItem></UpdateItem>
           </RequireAuth>
         } />
-        <Route path="/aditems" element={<AddItems />} />
+        <Route path="/additem" element={<AddItems />} />
         <Route path="/login" element={<LogIn />} />
         <Route path="/register" element={<Register />} />
       </Routes>
