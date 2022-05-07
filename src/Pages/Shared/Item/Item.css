@@ -10,3 +10,21 @@
     grid-template-columns: 2fr 1fr;
     grid-gap: 20px;
 }
+
+.update-btn {
+    background: #C6081B;
+    color: white;
+    text-transform: uppercase;
+    border: none;
+    margin-top: 40px;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 4px;
+}
+
+.update-btn:hover {
+    background: #bf1650;
+    color: white;
+    transition: 0.3s all;
+}

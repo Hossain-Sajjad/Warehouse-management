@@ -22,7 +22,7 @@ const Item = ({ item }) => {
                     <p>Quantity: {quantity}</p>
                 </div>
                 <div className='my-auto'>
-                    <div className="btn btn-primary" onClick={() => navigateToItemUpdate(item._id)}>Update</div>
+                    <div className="btn update-btn" onClick={() => navigateToItemUpdate(item._id)}>Update</div>
                 </div>
             </div>
         </div>

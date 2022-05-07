@@ -1,11 +1,30 @@
 import React from 'react';
+import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useForm } from "react-hook-form";
+import { useNavigate } from 'react-router-dom';
+import auth from '../../firebase.init';
 import "./LogIn.css";
 
 const Register = () => {
+    const navigate = useNavigate();
     const { register, formState: { errors }, handleSubmit } = useForm();
+
+    const [
+        signInWithEmailAndPassword,
+        user,
+        loading,
+        error,
+    ] = useSignInWithEmailAndPassword(auth);
+
+    if (user) {
+        navigate('/');
+    }
+
     const onSubmit = (data) => {
         console.log(data);
+        const email = data.email;
+        const password = data.password;
+        signInWithEmailAndPassword(email, password)
     };
 
     return (

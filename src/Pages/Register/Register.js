@@ -1,11 +1,24 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
+import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import "./Register.css";
+import auth from '../../firebase.init';
 
 const Register = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
+
+    const [
+        createUserWithEmailAndPassword,
+        user,
+        loading,
+        error,
+    ] = useCreateUserWithEmailAndPassword(auth);
+
     const onSubmit = (data) => {
         console.log(data);
+        const email = data.email;;
+        const password = data.password;
+        createUserWithEmailAndPassword(email, password)
     };
 
     return (
