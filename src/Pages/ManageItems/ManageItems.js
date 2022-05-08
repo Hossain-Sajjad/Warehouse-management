@@ -7,7 +7,7 @@ const ManageItems = () => {
 
     const [items, setIteams] = useState('');
     useEffect(() => {
-        fetch("https://damp-brushlands-34790.herokuapp.com/items")
+        fetch("https://damp-brushlands-34790.herokuapp.com/allitems")
             .then(res => res.json())
             .then(data => setIteams(data))
     }, [])

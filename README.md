@@ -1,6 +1,21 @@
-# Getting Started with Create React App
+# Hossain Electronics
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Site link [Hossain Electronics](https://hossain-electronics.web.app/).
+
+
+* A Full Stack Inventory Project.
+* Used in this Project: 
+    * React
+    * firebase
+    * react router
+    * node
+    * express
+    * mongodb
+* implemented CRUD operation.
+* can Add, Update & Delete items.
+* Email & Google authentication based.
+
+
 
 ## Available Scripts
 
