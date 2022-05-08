@@ -1,3 +1,4 @@
+import CounterSection from '../CounterSection/CounterSection';
 import Items from '../Items/Items';
 import TopSection from '../TopSection/TopSection';
 import './Home.css'
@@ -7,6 +8,7 @@ const Home = () => {
         <div>
             <TopSection></TopSection>
             <Items></Items>
+            <CounterSection></CounterSection>
         </div>
     );
 };

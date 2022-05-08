@@ -35,6 +35,9 @@ const ManageItems = () => {
     return (
         <div className='container'>
             <h1>Total Items: {items.length}</h1>
+            <div className='my-auto'>
+                <div className="w-50 btn update-btn d-block mx-auto" onClick={() => navigateToAddNew()}>Add New Item</div>
+            </div>
             {
 
                 items && items.map(item =>
@@ -45,9 +48,6 @@ const ManageItems = () => {
                     ></ItemForManage>)
 
             }
-            <div className='my-auto'>
-                <div className="btn update-btn" onClick={() => navigateToAddNew()}>Add New Item</div>
-            </div>
         </div>
     );
 };
