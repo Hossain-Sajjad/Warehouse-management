@@ -1,17 +1,20 @@
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
 import './AddItems.css'
 
 const AddItems = () => {
+    const [user] = useAuthState(auth);
     const handleSubmitItem = event => {
         event.preventDefault();
+        const email = user?.email;
         const name = event.target.name.value;
         const description = event.target.description.value;
         const price = event.target.price.value;
         const quantity = event.target.quantity.value;
         const supplier = event.target.supplier.value;
         const img = event.target.img.value;
-        const item = { name, description, price, quantity, supplier, img };
-        console.log(item);
+        const item = { email, name, description, price, quantity, supplier, img };
         fetch("https://damp-brushlands-34790.herokuapp.com/item", {
             method: 'POST',
             headers: {
