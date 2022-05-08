@@ -3,21 +3,33 @@ import { useForm } from "react-hook-form";
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import "./Register.css";
 import auth from '../../firebase.init';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Social from '../Shared/Social/Social';
+import Loading from '../Shared/Loading/Loading';
 
 const Register = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
+    const navigate = useNavigate();
 
     const [
         createUserWithEmailAndPassword,
         user,
         loading,
         error,
-    ] = useCreateUserWithEmailAndPassword(auth);
+    ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+
+    let errorElement;
+    if (error) {
+        errorElement = <p className='text-danger'>Error: {error?.message}</p>;
+    }
+    if (loading) {
+        <Loading></Loading>
+    }
+    if (user) {
+        navigate('/home')
+    }
 
     const onSubmit = (data) => {
-        console.log(data);
         const email = data.email;;
         const password = data.password;
         createUserWithEmailAndPassword(email, password)
@@ -43,7 +55,7 @@ const Register = () => {
                 <label htmlFor="password">Password</label>
                 <input placeholder="password" type="password" {...register("password", { required: "enter a strong password" })} />
                 {errors.password && <p className='text-danger'>{errors.password.message}</p>}
-
+                {errorElement}
                 <input className='register-btn' type="Submit" defaultValue="Register" />
             </form>
             <div className='mt-4'>
