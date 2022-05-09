@@ -14,7 +14,7 @@ const UpdateItem = () => {
     const handleDelivered = () => {
         const quantity = parseInt(item.quantity) - 1;
         const updatedItem = { quantity };
-        const url = `http://localhost:5000/item/${id}`;
+        const url = `https://damp-brushlands-34790.herokuapp.com/item/${id}`;
         fetch(url, {
             method: 'PUT',
             headers: {

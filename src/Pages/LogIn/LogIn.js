@@ -37,7 +37,6 @@ const Register = () => {
 
     const onSubmit = (data) => {
         const email = data.email;
-        console.log(email)
         const password = data.password;
         signInWithEmailAndPassword(email, password)
     };

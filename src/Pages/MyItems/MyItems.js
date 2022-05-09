@@ -2,13 +2,14 @@ import React, { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import Item from '../ItemForManage/ItemForManage';
+import Loading from '../Shared/Loading/Loading';
 
 const MyItems = () => {
     const [items, setIteams] = useState();
     const [user] = useAuthState(auth);
     const email = [user?.email]
 
-    fetch("http://localhost:5000/myitems", {
+    fetch("https://damp-brushlands-34790.herokuapp.com/myitems", {
         method: 'POST',
         headers: {
             'content-type': 'application/json'
@@ -24,12 +25,13 @@ const MyItems = () => {
             <h1>My Items: </h1>
             {
 
-                items && items.map(item =>
-                    <Item
-                        key={item._id}
-                        item={item}
-                    ></Item>
-                )
+                !items ? <Loading></Loading> :
+                    items.map(item =>
+                        <Item
+                            key={item._id}
+                            item={item}
+                        ></Item>
+                    )
 
             }
 

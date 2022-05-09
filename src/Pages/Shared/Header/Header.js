@@ -24,6 +24,7 @@ const Header = () => {
                         <Nav.Link href="/manageitems">Manage Items</Nav.Link>
                         <Nav.Link href="/additem">Add Items</Nav.Link>
                         <Nav.Link href="/myitems">My Items</Nav.Link>
+                        <Nav.Link href="/blog">Blogs</Nav.Link>
                         {
                             user ?
                                 <Nav.Link onClick={handleSignOut}>Sign Out</Nav.Link>
