@@ -9,7 +9,7 @@ const MyItems = () => {
   const [user] = useAuthState(auth);
   const email = [user?.email];
 
-  fetch("http://localhost:5000/myitems", {
+  fetch("https://warehouse-management-server-sigma.vercel.app/myitems", {
     method: "POST",
     headers: {
       "content-type": "application/json",

@@ -5,7 +5,7 @@ const UpdateItem = () => {
   const { id } = useParams();
   const [item, setItem] = useState("");
   useEffect(() => {
-    const url = `http://localhost:5000/item/${id}`;
+    const url = `https://warehouse-management-server-sigma.vercel.app/item/${id}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setItem(data));
@@ -14,7 +14,7 @@ const UpdateItem = () => {
   const handleDelivered = () => {
     const quantity = parseInt(item.quantity) - 1;
     const updatedItem = { quantity };
-    const url = `http://localhost:5000/item/${id}`;
+    const url = `https://warehouse-management-server-sigma.vercel.app/item/${id}`;
     fetch(url, {
       method: "PUT",
       headers: {
@@ -34,7 +34,7 @@ const UpdateItem = () => {
     const quantity =
       parseInt(event.target.quantity.value) + parseInt(item.quantity);
     const updatedItem = { quantity };
-    const url = `http://localhost:5000/item/${id}`;
+    const url = `https://warehouse-management-server-sigma.vercel.app/item/${id}`;
     fetch(url, {
       method: "PUT",
       headers: {

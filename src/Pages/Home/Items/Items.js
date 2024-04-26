@@ -4,7 +4,7 @@ import Item from "../../Shared/Item/Item";
 const Items = () => {
   const [items, setIteams] = useState("");
   useEffect(() => {
-    fetch("http://localhost:5000/items")
+    fetch("https://warehouse-management-server-sigma.vercel.app/items")
       .then((res) => res.json())
       .then((data) => setIteams(data));
   }, []);

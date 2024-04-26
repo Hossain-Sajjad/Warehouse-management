@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import AddItems from "./Pages/AddItems/AddItems";
-import Blog from "./Pages/Blog/Blog";
+// import Blog from "./Pages/Blog/Blog";
 import Home from "./Pages/Home/Home/Home";
 import LogIn from "./Pages/LogIn/LogIn";
 import ManageItems from "./Pages/ManageItems/ManageItems";

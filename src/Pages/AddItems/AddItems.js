@@ -15,7 +15,7 @@ const AddItems = () => {
     const supplier = event.target.supplier.value;
     const img = event.target.img.value;
     const item = { email, name, description, price, quantity, supplier, img };
-    fetch("http://localhost:5000/item", {
+    fetch("https://warehouse-management-server-sigma.vercel.app/item", {
       method: "POST",
       headers: {
         "content-type": "application/json",

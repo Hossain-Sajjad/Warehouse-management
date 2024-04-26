@@ -7,7 +7,7 @@ const ManageItems = () => {
 
   const [items, setIteams] = useState("");
   useEffect(() => {
-    fetch("http://localhost:5000/allitems")
+    fetch("https://warehouse-management-server-sigma.vercel.app/allitems")
       .then((res) => res.json())
       .then((data) => setIteams(data));
   }, []);
@@ -15,7 +15,7 @@ const ManageItems = () => {
   const handleItemDelete = (id) => {
     const proceed = window.confirm("are you sure?");
     if (proceed) {
-      const url = `http://localhost:5000/item/${id}`;
+      const url = `https://warehouse-management-server-sigma.vercel.app/item/${id}`;
       fetch(url, {
         method: "DELETE",
       })
